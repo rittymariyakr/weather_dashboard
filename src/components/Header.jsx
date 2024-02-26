@@ -34,7 +34,7 @@ function Header() {
                     </Navbar.Collapse>
                     <h5 className='mt-3 mr-3 '><span className='text-light'>{user.username}</span></h5>
                                       
-                            <button onClick={handleLogout} className='btn btn-primary'><h5><i className="fa-solid fa-power-off text-danger mt-3 ms-1"></i></h5></button>
+                            <button onClick={handleLogout} className='btn btn-primary'><h5><i className="fa-solid fa-power-off text-white mt-3 ms-1"></i></h5></button>
                 </Container>
             </Navbar>
         </div>

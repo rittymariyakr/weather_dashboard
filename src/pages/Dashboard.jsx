@@ -10,7 +10,7 @@ function Dashboard() {
         coord: { lat: 5, lon: 6 },
         main: { temp: 7, humidity: 8 },
         wind: { speed: 10 },
-        weather: [{ description: "" }]
+        
     })
     const [cityName, setCityName] = useState('');
     const [windSpeedGauge, setWindSpeedGauge] = useState(0);
@@ -67,7 +67,7 @@ function Dashboard() {
                 <div className='p-3 w-100'>
                     <h3 className='text-primary text-center'>Dashboard</h3>
                     <div className='w-100 d-flex justify-content-center align-items-center mt-3'>
-                        <form className="d-flex ms-md-5 ms-lg-5 me-md-3 me-lg-5 w-50">
+                        <form className="d-flex ms-md-5 ms-lg-5 me-md-3 me-lg-5 w-75">
                             <input
                                 className="border border-black form-control me-2 flex-grow-1"
                                 type="search" value={cityName} onChange={(e) => setCityName(e.target.value)} placeholder="Search by city"
@@ -81,67 +81,71 @@ function Dashboard() {
 
                     <div className="container mt-5">
                         <div className="row">
-                            <div className="col-md-6">
-                                <h5>Bar Chart</h5>
-                                <BarChart
-                                    width={600}
-                                    height={400}
-                                    data={barChartData}
-                                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                                >
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="value" fill="#8884d8" />
-                                </BarChart>
+                            <div className="col-md-6 mb-4">
+                                <div className="card shadow">
+                                    <h5 className="card-title text-center pt-3">Bar Chart</h5>
+                                    <div className="card-body">
+                                        <BarChart
+                                            width={500}
+                                            height={300}
+                                            data={barChartData}
+                                            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                                        >
+                                            <XAxis dataKey="name" />
+                                            <YAxis />
+                                            <CartesianGrid strokeDasharray="3 3" />
+                                            <Tooltip />
+                                            <Legend />
+                                            <Bar dataKey="value" fill="#8884d8" />
+                                        </BarChart>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <h5>Pie Chart</h5>
-                                <PieChart width={600} height={400}>
-                                    <Pie
-                                        data={pieData}
-                                        cx={200}
-                                        cy={200}
-                                        labelLine={false}
-                                        outerRadius={70}
-                                        fill="#8884d8"
-                                        dataKey="value"
-                                        label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                                    >
-                                        {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
-                                    </Pie>
-                                    <Tooltip />
-                                    <Legend />
-                                </PieChart>
+                            <div className="col-md-6 mb-4">
+                                <div className="card shadow">
+                                    <h5 className="card-title text-center pt-3">Pie Chart</h5>
+                                    <div className="card-body">
+                                        <PieChart width={400} height={300}>
+                                            <Pie
+                                                data={pieData}
+                                                cx={200}
+                                                cy={150}
+                                                labelLine={false}
+                                                outerRadius={70}
+                                                fill="#8884d8"
+                                                dataKey="value"
+                                                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                                            >
+                                                {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
+                                            </Pie>
+                                            <Tooltip />
+                                            <Legend />
+                                        </PieChart>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6 offset-md-3 mb-4">
+                                <div className="card shadow">
+                                    <h5 className="card-title text-center pt-3">Gauge Meter</h5>
+                                    <div className="card-body">
+                                        <GaugeChart
+                                            id="gauge-chart1"
+                                            percent={windSpeedGauge / 100}
+                                            textColor="#000"
+                                            needleColor="#f00"
+                                            needleBaseColor="#000"
+                                            fontSize="16px"
+                                            arcPadding={0.05}
+                                            formatTextValue={(value) => `${value * 100}%`}
+                                        />
+                                        <p className='text-center fw-bold'>Wind Speed</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-            <div className="container">
-                    <div className="row">
-                       <div className="col-md-3"></div>
-                       <div className="col-md-6">
-                       <h5>Pie Chart</h5>
-                       <GaugeChart
-                            id="gauge-chart1"
-                            percent={windSpeedGauge / 100}
-                            textColor="#000"
-                            needleColor="#f00"
-                            needleBaseColor="#000"
-                            fontSize="16px"
-                            arcPadding={0.05}
-                            formatTextValue={(value) => `${value * 100}%`}
-                        />
-                       </div>
-                       <div className="col-md-3"></div>
                     </div>
                 </div>
-                    </div>
-                </div>
-                
             </div>
-
         </>
     );
 }

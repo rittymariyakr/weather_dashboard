@@ -14,9 +14,8 @@ function Settings() {
 
                 </div>
                 <div className='p-3 w-100'>
-                    <h3 className='text-warning text-center'>USER STTINGS</h3>
-                </div>
-
+        <h1 className='text-center text-warning'>USER SETTINGS</h1>
+        </div>
             </div>
         </div>
     )

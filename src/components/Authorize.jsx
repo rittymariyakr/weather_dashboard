@@ -104,7 +104,7 @@ function Authorize({ register }) {
     return (
         <div
             style={{
-                backgroundImage: "url('https://images.pexels.com/photos/19528148/pexels-photo-19528148/free-photo-of-a-brick-wall-with-a-light-on-it.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')",
+                backgroundImage: "url('https://img.freepik.com/premium-photo/top-view-white-toy-airplane-model-blue-color-background-concept-travel_43448-410.jpg')",
                 backgroundSize: 'cover',
                 minHeight: '100vh',
                 display: 'flex',
@@ -113,12 +113,14 @@ function Authorize({ register }) {
             }}
         >
             <div style={{ width: '100%' }} className='d-flex justify-content-center align-items-center'>
+
                 <div className='w-50 container'>
+            <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}><i class="fa-solid fa-arrow-left me-3"></i>Back to Home</Link>
                     <div className='card  p-3' style={{ borderRadius: '10px', boxShadow: '0px 0px 20px 0px #888888', backgroundColor: '#ffffff' }}>
                         <div className="row align-items-center">
                             <div className="col-md-12">
                                 <div className='d-flex align-items-center flex-column'>
-                                    <h1 className='fw-bolder text-dark mt-5' style={{ fontSize: "250%" }}> TURBO</h1>
+                                    <h1 className='fw-bolder text-primary mt-5' style={{ fontSize: "250%" }}> TURBO</h1>
                                     <h5 className='fw-bolder text-center mt-3 mb-3 text-black'>
                                         {
                                             registerform ?

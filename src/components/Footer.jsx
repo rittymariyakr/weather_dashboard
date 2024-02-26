@@ -26,8 +26,8 @@ function Footer() {
                         <div className="col-lg-3 d-flex flex-column mt-5">
                             <h3 className='text-primary' > <b>Services</b></h3>
                             <Link style={{ color: '#1e1e38', textDecoration: 'none' }}>Learning</Link>
-                            <Link style={{ color: '#1e1e38', textDecoration: 'none' }}>Study Material</Link>
-                            <Link style={{ color: '#1e1e38', textDecoration: 'none' }}>Advanced Courses</Link>
+                            <Link style={{ color: '#1e1e38', textDecoration: 'none' }}>Wind Speed</Link>
+                            <Link style={{ color: '#1e1e38', textDecoration: 'none' }}>Weather</Link>
                         </div>
 
                         <div className="col-lg-3 d-flex flex-column mt-5">
