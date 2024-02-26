@@ -19,9 +19,9 @@ function Footer() {
                         </div>
                         <div className="col-lg-3 d-flex flex-column mt-5">
                             <h4 className='text-primary'> <b>Links</b></h4>
-                            <Link style={{ textDecoration: 'none',color: '#1e1e38'   }}>Home</Link>
-                            <Link style={{ textDecoration: 'none', color: '#1e1e38' }}>Admin</Link>
-                            <Link style={{ textDecoration: 'none', color: '#1e1e38' }}>Courser</Link>
+                            <Link style={{ textDecoration: 'none',color: '#1e1e38'   }}>bootstrap</Link>
+                            <Link style={{ textDecoration: 'none', color: '#1e1e38' }}>bootswatch</Link>
+                            <Link style={{ textDecoration: 'none', color: '#1e1e38' }}>fontawesome</Link>
                         </div>
                         <div className="col-lg-3 d-flex flex-column mt-5">
                             <h3 className='text-primary' > <b>Services</b></h3>
