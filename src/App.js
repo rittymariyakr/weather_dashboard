@@ -8,18 +8,23 @@ import Settings from './pages/Settings';
 import UserProfile from './pages/UserProfile';
 import Footer from './components/Footer';
 import Admin from './pages/Admin';
+import { useContext } from 'react';
+import { isAuthTokenContext } from './context/ContextShare';
 
 function App() {
+  const { isAuthToken, setIsAuthToken } =useContext(isAuthTokenContext)
+
+
   return (
     <div >
       
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={isAuthToken ? <Dashboard />:<Home/>} />
         <Route path='/login' element={<Authorize />} />
         <Route path='/register' element={<Authorize register />} />
         <Route path='/settings' element={<Settings />} />
-        <Route path='/admin-dashboard' element={<Admin />} />
+        <Route path='/admin-dashboard' element={isAuthToken ?<Admin />:<Home/>} />
         <Route path='/userprofile' element={<UserProfile />} />
 
       </Routes>

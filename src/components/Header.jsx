@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
+import { isAuthTokenContext } from '../context/ContextShare';
 
 function Header() {
+
+    const { isAuthToken, setIsAuthToken } =useContext(isAuthTokenContext)
     const [user, setUser] = useState("");
     const navigate = useNavigate();
 
@@ -19,6 +22,7 @@ function Header() {
     const handleLogout = () => {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("existingUser");
+        setIsAuthToken(false)
         navigate('/');
     };
 
@@ -33,8 +37,8 @@ function Header() {
                         </Nav>
                     </Navbar.Collapse>
                     <h5 className='mt-3 mr-3 '><span className='text-light'>{user.username}</span></h5>
-                                      
-                            <button onClick={handleLogout} className='btn btn-primary'><h5><i className="fa-solid fa-power-off text-white mt-3 ms-1"></i></h5></button>
+
+                    <button onClick={handleLogout} className='btn btn-primary'><h5><i className="fa-solid fa-power-off text-white mt-3 ms-1"></i></h5></button>
                 </Container>
             </Navbar>
         </div>
