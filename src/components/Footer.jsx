@@ -13,7 +13,7 @@ function Footer() {
                             <div>
                                 <Link style={{ textDecoration: 'none', color: '#1e1e38' }}> <i className="fa-solid fa-phone me-3"></i>123-456-7890</Link>
                                 <br />
-                                <Link style={{ textDecoration: 'none', color: '#1e1e38' }}> <i className="fa-solid fa-envelope me-3"></i>Skilltech@gmail.com</Link>
+                                <Link style={{ textDecoration: 'none', color: '#1e1e38' }}> <i className="fa-solid fa-envelope me-3"></i>turbo@gmail.com</Link>
                             </div>
 
                         </div>
