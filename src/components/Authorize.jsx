@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import { loginAPI, registerAPI } from '../Services/allAPI'
 import Swal from 'sweetalert2';
+import { isAuthTokenContext } from '../context/ContextShare';
 
 function Authorize({ register }) {
+    const { isAuthToken, setIsAuthToken } =useContext(isAuthTokenContext)
     const [userData, setUserData] = useState({
         username: "",
         email: "",
@@ -74,7 +76,8 @@ function Authorize({ register }) {
                     title: "Login Successfull",
                     text: "",
                     icon: "success"
-                });               
+                });  
+                setIsAuthToken(true)             
                 sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser))
                 sessionStorage.setItem("token", result.data.token)
                 setUserData({
