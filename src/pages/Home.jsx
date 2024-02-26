@@ -6,10 +6,10 @@ function Home() {
     return (
         <>
         <div>
-            <div style={{ backgroundImage: "url(https://media.istockphoto.com/id/1368170023/photo/hurricane-ida-2021-topographic-map-3d-render-color.webp?b=1&s=170667a&w=0&k=20&c=kakXmBYTp2KF4WUliCYNIsvwBwGdTbU2aVEkZ3ONop0=)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '680px' }}>
+            <div style={{ backgroundImage: "url(https://e1.pxfuel.com/desktop-wallpaper/700/844/desktop-wallpaper-blue-color-backgrounds-plane-colour-background.jpg)", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '780px' }}>
                 <div style={{ height: '600px' }} className='d-flex  align-items-center '>
-                    <Container >
-                        <h1 style={{ fontWeight: 'bold', fontSize: '50px', color: 'black' }}>The Weather Says <br></br>a lot </h1>
+                    <Container className='text-center' >
+                        <h1 style={{ fontWeight: 'bold', fontSize: '70px', color: 'black' }}>The Weather Says a lot </h1>
                         <Link style={{ textDecoration: 'none' }} to={'/login'}><button style={{ backgroundColor: 'black', color: 'white' }} className='btn rounded'><b>Get Started</b></button></Link>
 
                     </Container>
